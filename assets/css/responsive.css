@@ -25,13 +25,28 @@
    `position: sticky` de la cabecera.
    -------------------------------------------------------------------------- */
 
-body,
+/* Prosa: una palabra larga (URL, correo, nombre tecnico) se parte antes que
+   desbordar su caja. */
 .page-content,
 .elementor-widget-text-editor,
-.elementor-widget-heading,
-.elementor-icon-box-content,
-.elementor-image-box-content {
+.elementor-icon-box-description,
+.elementor-image-box-description {
 	overflow-wrap: break-word;
+}
+
+/* Los titulares NO se parten nunca por la mitad: su tamaño está ajustado a mano
+   en Elementor y partirlos deja letras huérfanas en la línea siguiente
+   («organizacione / s», «Ciberdefens / a»). `overflow-wrap` se hereda, así que
+   hay que anularlo de forma explícita: los contenedores de arriba envuelven a
+   los titulares.
+
+   Se midió el caso peor (Ciberdefensa a 360 px): el titular sobresale 6 px de
+   su caja, pero NO genera scroll horizontal en la página, así que el corte de
+   palabra salía mucho más caro que ese desbordamiento. */
+.elementor-heading-title,
+.elementor-icon-box-title,
+.elementor-image-box-title {
+	overflow-wrap: normal;
 }
 
 img,
