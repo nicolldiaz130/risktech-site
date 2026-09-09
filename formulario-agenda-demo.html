@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solicita una demo - RiskTech</title>
+<link rel='stylesheet' id='elementor-gf-local-poppins-css' href='wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/poppins.css' media='all' />
+<style>
+  :root{
+    --morado:#7064FF;
+    --morado-oscuro:#5A4FE0;
+    --coral:#FF6554;
+    --texto:#1A1A1A;
+    --gris:#6E6E7E;
+    --borde:#D8D8E4;
+    --fondo:#F3F2FC;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:var(--fondo);
+    font-family:'Poppins', Arial, sans-serif;
+    color:var(--texto);
+  }
+  .demo-section{
+    max-width:1180px;
+    margin:0 auto;
+    padding:72px 32px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:start;
+  }
+  /* -------- Columna izquierda -------- */
+  .col-info h1{
+    font-size:44px;
+    font-weight:800;
+    line-height:1.1;
+    margin:0 0 24px;
+    color:var(--texto);
+  }
+  .col-info p{
+    font-size:16px;
+    line-height:1.7;
+    color:var(--gris);
+    margin:0 0 20px;
+    max-width:480px;
+  }
+  .col-info .imagen-wrap{
+    margin-top:32px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 44px rgba(112,100,255,0.18);
+  }
+  .col-info .imagen-wrap img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  /* -------- Columna derecha: tarjeta de formulario -------- */
+  .form-card{
+    background:#FFFFFF;
+    border-radius:24px;
+    box-shadow:0 24px 60px rgba(112,100,255,0.16);
+    padding:40px 40px 36px;
+  }
+  .field{margin-bottom:20px;}
+  .field-row{
+    display:flex;
+    gap:14px;
+  }
+  .field-row .field{
+    flex:1;
+    min-width:0;
+  }
+  label{
+    display:block;
+    font-size:14px;
+    font-weight:700;
+    color:var(--texto);
+    margin-bottom:8px;
+  }
+  label .req{color:var(--coral);}
+  input[type="email"],
+  input[type="text"],
+  input[type="tel"],
+  select{
+    width:100%;
+    padding:13px 14px;
+    border:1.5px solid var(--borde);
+    background:#FFFFFF;
+    border-radius:10px;
+    font-family:'Poppins', Arial, sans-serif;
+    font-size:14.5px;
+    color:var(--texto);
+    outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  input::placeholder{color:#A6A6B8;}
+  input:focus, select:focus{
+    border-color:var(--morado);
+    box-shadow:0 0 0 3px rgba(112,100,255,0.14);
+  }
+  select{
+    appearance:none;-webkit-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%236E6E7E' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+    padding-right:36px;
+    cursor:pointer;
+  }
+  select.placeholder-active{color:#A6A6B8;}
+  .phone-row{
+    display:flex;
+    gap:10px;
+  }
+  .phone-row select{
+    flex:0 0 128px;
+    padding-right:30px;
+  }
+  .phone-row input{
+    flex:1;
+    min-width:0;
+  }
+  .error-text{
+    display:none;
+    font-size:12.5px;
+    color:#E0453A;
+    margin-top:6px;
+  }
+  .field.has-error input,
+  .field.has-error select{
+    border-color:#E0453A;
+  }
+  .field.has-error .error-text{
+    display:block;
+  }
+  .consent-notice{
+    font-size:12.5px;
+    line-height:1.6;
+    color:var(--gris);
+    margin:4px 0 18px;
+  }
+  .consent-notice a{color:var(--morado);text-decoration:underline;}
+  .consent{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:26px;
+  }
+  .consent input[type="checkbox"]{
+    margin-top:3px;
+    width:16px;
+    height:16px;
+    accent-color:var(--morado);
+    flex-shrink:0;
+  }
+  .consent label{
+    font-size:12.5px;
+    font-weight:400;
+    color:var(--gris);
+    line-height:1.6;
+    margin:0;
+  }
+  .consent.has-error input[type="checkbox"]{
+    outline:1.5px solid #E0453A;
+    outline-offset:2px;
+  }
+  button.submit-btn{
+    width:100%;
+    padding:15px 20px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg, var(--morado) 0%, var(--morado-oscuro) 100%);
+    color:#FFFFFF;
+    font-family:'Poppins', Arial, sans-serif;
+    font-size:15.5px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 10px 24px rgba(112,100,255,0.32);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  button.submit-btn:hover{
+    transform:translateY(-1px);
+    box-shadow:0 14px 28px rgba(112,100,255,0.4);
+  }
+  @media (max-width:900px){
+    .demo-section{grid-template-columns:1fr;gap:40px;padding:48px 22px;}
+    .col-info h1{font-size:32px;}
+  }
+  @media (max-width:480px){
+    .form-card{padding:28px 22px 24px;border-radius:18px;}
+    .field-row{flex-direction:column;gap:0;}
+  }
+</style>
+</head>
+<body>
+
+<section class="demo-section">
+
+  <div class="col-info">
+    <h1>Conéctate con RiskTech</h1>
+    <p>Ponemos toda nuestra experiencia en prevención de riesgos al alcance de tu organización.</p>
+    <p>Conecta con nuestro equipo y lleva tus estrategias al siguiente nivel con tecnología avanzada🚀</p>
+    <div class="imagen-wrap">
+      <img src="wp-content/uploads/2026/09/equipo-demo-risktech.jpg" alt="Equipo RiskTech - Tecnología para decisiones más seguras">
+    </div>
+  </div>
+
+  <div class="form-card">
+    <form id="formAgendaDemo" novalidate>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="nombre">Nombre<span class="req">*</span></label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          <div class="error-text">Por favor completa este campo obligatorio.</div>
+        </div>
+        <div class="field">
+          <label for="apellido">Apellido<span class="req">*</span></label>
+          <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
+          <div class="error-text">Por favor completa este campo obligatorio.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="empresa">¿Dónde trabajas?<span class="req">*</span></label>
+        <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa" required>
+        <div class="error-text">Por favor completa este campo obligatorio.</div>
+      </div>
+
+      <div class="field">
+        <label for="rol">¿Cuál es tu rol?<span class="req">*</span></label>
+        <input type="text" id="rol" name="rol" placeholder="Ej. Gerente de Riesgo" required>
+        <div class="error-text">Por favor completa este campo obligatorio.</div>
+      </div>
+
+      <div class="field">
+        <label for="ayuda">¿En qué te podemos ayudar?<span class="req">*</span></label>
+        <select id="ayuda" name="ayuda" required class="placeholder-active">
+          <option value="" selected disabled>Selecciona una opción</option>
+          <option value="aml-risk">Conocer AMLRISK</option>
+          <option value="framl-ms-antifraude">Conocer FRAML-MS Antifraude</option>
+          <option value="framl-ms-aml">Conocer FRAML-MS AML</option>
+          <option value="alert-framl-defense">Conocer Framl Alert Defense</option>
+          <option value="demo-general">Solicitar una demo general</option>
+          <option value="otro">Otro</option>
+        </select>
+        <div class="error-text">Por favor completa este campo obligatorio.</div>
+      </div>
+
+      <div class="field">
+        <label for="correo">Correo<span class="req">*</span></label>
+        <input type="email" id="correo" name="correo" placeholder="nombre@empresa.com" required>
+        <div class="error-text">Por favor completa este campo obligatorio.</div>
+      </div>
+
+      <div class="field">
+        <label for="telefono">Número de celular<span class="req">*</span></label>
+        <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" required>
+        <div class="error-text">Por favor completa este campo obligatorio.</div>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="aceptaPoliticas" name="aceptaPoliticas" required>
+        <label for="aceptaPoliticas">Acepto la <a href="politica-de-privacidad.html" target="_blank" rel="noopener">Política de Tratamiento de Datos Personales</a> de RiskTech.<span class="req">*</span></label>
+      </div>
+
+      <button type="submit" class="submit-btn">Solicitar demo</button>
+    </form>
+  </div>
+
+</section>
+
+<script>
+  // NOTA PARA DESARROLLO: este formulario aún NO está conectado a ningún
+  // destino (sin Brevo, sin CRM, sin Excel/Power Automate). El submit
+  // solo se intercepta para que la vista previa no recargue la página,
+  // y aquí se muestra un ejemplo simple de validación visual de campos
+  // obligatorios. Cuando se defina el destino final, reemplazar este
+  // bloque por el envío real (fetch a un endpoint, Power Automate, etc.).
+  document.getElementById('formAgendaDemo').addEventListener('submit', function(e){
+    e.preventDefault();
+    this.querySelectorAll('.field, .consent').forEach(function(field){
+      field.classList.remove('has-error');
+    });
+    this.querySelectorAll('[required]').forEach(function(el){
+      const vacio = el.type === 'checkbox' ? !el.checked : !el.value;
+      if(vacio){
+        el.closest('.field, .consent').classList.add('has-error');
+      }
+    });
+  });
+  document.querySelectorAll('select.placeholder-active').forEach(function(sel){
+    sel.addEventListener('change', function(){
+      this.classList.toggle('placeholder-active', this.value === '');
+    });
+  });
+</script>
+
+</body>
+</html>
